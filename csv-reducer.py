@@ -26,10 +26,10 @@ def main():
 		help='CSV output file name', required=True)
 
 	parser.add_argument('-d', '--remove-duplicate', type=str, default=False, 
-		dest='remove_duplicate', help='Col or cols to check duplicate rows')
+		dest='remove_duplicate', help='Set this option True to check cols for duplicated rows')
 
 	parser.add_argument('-s', '--csv-separator', type=str, default=',', 
-		dest='csv_separator', help='Caracter used to separate columns in CSV input/output file')
+		dest='csv_separator', help='Caracter used to separate columns in CSV input/output file. Comma (,) is default.')
 
 	parser.add_argument('-e', '--csv-encoding', type=str, default='iso-8859-1', 
 		dest='csv_encoding', help='CSV encoding type, default is iso-8859-1')
