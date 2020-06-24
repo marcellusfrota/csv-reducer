@@ -60,16 +60,19 @@ def main():
 	print(":Reading {} cols from file '{}' [{}kb]...".format(selected_cols, args.input_file, int(os.path.getsize(args.input_file)/1024)))
 	try:
 		df = pd.read_csv(args.input_file, encoding=args.csv_encoding, sep=args.csv_separator, usecols=selected_cols)
+		total = len(df)
+		print(":Found {} rows".format(total))
 		print(":Filtered ok!")
 	except ValueError as error:
 		print(":ERROR", error)
 
 	if (args.remove_duplicate):
-		print(":Removing duplicated...")
+		print("\n:Removing duplicated...")
 		df.drop_duplicates(subset=duplicate_selected_cols, keep='first', inplace=True)
-		print(":Duplicates removed!")
+		duplicated_total = len(df)
+		print(":{} duplicated rows removed!".format(total-duplicated_total))
 
-	print(":Saving file...")
+	print("\n:Saving file...")
 
 	try:
 		df.to_csv(args.output_file, encoding=args.csv_encoding, index=False, sep=args.csv_separator)
