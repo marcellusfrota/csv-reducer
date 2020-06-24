@@ -36,12 +36,13 @@ def main():
 
 	args = parser.parse_args()
 
-	selected_cols = None
+	print(title_perm + "\n")
 
 	try:
 
 		df_header = pd.read_csv(args.input_file, encoding=args.csv_encoding, nrows=1, sep=args.csv_separator) # , usecols=['Nome', 'E-mail', 'CPF', 'Segmetacao']
- 
+		selected_cols = None
+
 		title = title_perm + '\n\nChoose columns to be used (press SPACE to mark, ENTER to continue): '
 		options = df_header.columns.__dict__['_data']
 		selected = pick(options, title, multiselect=True, min_selection_count=1)
@@ -49,28 +50,36 @@ def main():
 
 	except FileNotFoundError:
 		print(":ERROR - CSV Input file do not exist.")
+		exit()
 
 	if (args.remove_duplicate):
-		duplicate_title = 'Choose columns to be checked for duplicates (press SPACE to mark, ENTER to continue): '
+		duplicate_title = 'Choose column or columns to be checked for duplicated (press SPACE to mark, ENTER to continue): '
 		duplicate_selected = pick(selected_cols, duplicate_title, multiselect=True, min_selection_count=1)
 		duplicate_selected_cols = [d[0] for d in duplicate_selected]
 
-	print(title_perm + "\n")
-
+	print(":Reading {} cols from file '{}' [{}kb]...".format(selected_cols, args.input_file, int(os.path.getsize(args.input_file)/1024)))
 	try:
 		df = pd.read_csv(args.input_file, encoding=args.csv_encoding, sep=args.csv_separator, usecols=selected_cols)
+		print(":Filtered ok!")
 	except ValueError as error:
 		print(":ERROR", error)
 
 	if (args.remove_duplicate):
+		print(":Removing duplicated...")
 		df.drop_duplicates(subset=duplicate_selected_cols, keep='first', inplace=True)
 		print(":Duplicates removed!")
 
-	df.to_csv(args.output_file, encoding=args.csv_encoding, index=False, sep=args.csv_separator)
+	print(":Saving file...")
 
-	print(":Done! have fun :)\n")
-	print("File output saved in:", args.output_file)
-	print("\n--- end of execution in %s seconds ---" % (time.time() - start_time))
+	try:
+		df.to_csv(args.output_file, encoding=args.csv_encoding, index=False, sep=args.csv_separator)
+		print(":File output saved in: {} [{}kb]".format(args.output_file, int(os.path.getsize(args.output_file)/1024)))
+	except:
+		print(":ERROR - Failed in save file {}".format(args.output_file))
+		exit()
+
+	print("\n:Done! have fun :)\n")
+	print("--- end of execution in %s seconds ---" % (time.time() - start_time))
 
 def clear(): 
   
