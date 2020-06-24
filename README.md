@@ -42,7 +42,7 @@ csv-reducer.py -i my_input_file.csv -o my_output_file.csv
 
 > **Note:** CSV columns separator default is a comma caracter ','.
 
-> **Note:** Reducer will ask you which columns you want to keep, select it in order.
+> **Note:** First line **must be** a header with columns names. Reducer will ask you which columns you want to keep, select it in order.
 
 ### To remove duplicated rows
 
