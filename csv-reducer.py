@@ -69,7 +69,8 @@ def main():
 	df.to_csv(args.output_file, encoding=args.csv_encoding, index=False, sep=args.csv_separator)
 
 	print(":Done! have fun :)\n")
-	print("--- end of execution in %s seconds ---" % (time.time() - start_time))
+	print("File output saved in:", args.output_file)
+	print("\n--- end of execution in %s seconds ---" % (time.time() - start_time))
 
 def clear(): 
   
