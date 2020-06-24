@@ -2,6 +2,8 @@
 
 CSV Reducer is a python script to filter columns from a CSV file with option to remove duplicate rows, saving results in other file.
 
+This used until CSV file has about 40GB. ;)
+
 ## Table of contents
 * [Installation](#installation)
 * [Running aplication](#running-aplication)
