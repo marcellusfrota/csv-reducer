@@ -7,6 +7,9 @@ __pycache__/
 # C extensions
 *.so
 
+CSV test files
+*.csv
+
 # Distribution / packaging
 .Python
 MANIFEST
