@@ -58,6 +58,12 @@ csv-reducer.py -i my_input_file.csv -o my_output_file.csv -d True
 csv-reducer.py -i my_input_file.csv -o my_output_file.csv -s ;
 ```
 
+### To change CSV encoding
+
+```bash
+csv-reducer.py -i my_input_file.csv -o my_output_file.csv -e utf-8
+```
+
 ### To get help with parameters
 
 ```bash
