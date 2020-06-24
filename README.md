@@ -42,13 +42,7 @@ csv-reducer.py -i my_input_file.csv -o my_output_file.csv
 
 > **Note:** CSV columns separator default is a comma caracter ','.
 
-> Reducer will ask you which columns you want to keep, select it in order.
-
-### To get help with parameters
-
-```bash
-csv-reducer.py -h
-```
+> **Note:** Reducer will ask you which columns you want to keep, select it in order.
 
 ### To remove duplicated rows
 
@@ -56,12 +50,18 @@ csv-reducer.py -h
 csv-reducer.py -i my_input_file.csv -o my_output_file.csv -d True
 ```
 
-> Reducer will ask you which columns you want to check for duplicated rows.
+> **Note:** Reducer will ask you which columns you want to check for duplicated rows.
 
 ### To change CSV separator
 
 ```bash
 csv-reducer.py -i my_input_file.csv -o my_output_file.csv -s ;
+```
+
+### To get help with parameters
+
+```bash
+csv-reducer.py -h
 ```
 
 ## Contributing
