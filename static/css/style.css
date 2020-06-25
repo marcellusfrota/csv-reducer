@@ -1,0 +1,71 @@
+body {
+	background-color: #efefef;
+	padding-top: 5rem;
+}
+
+[type="file"] {
+	height: 0;
+	overflow: hidden;
+	width: 0;
+}
+
+[type="file"] + label {
+	background: #f15d22;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Poppins", sans-serif;
+	font-size: inherit;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	outline: none;
+	padding: 1rem 50px;
+	position: relative;
+	transition: all 0.3s;
+	vertical-align: middle;
+}
+
+[type="file"] + label.btn-3 {
+    background-color: #ee6d9e;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+[type="file"] + label.btn-3 span {
+    display: inline-block;
+    height: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+[type="file"] + label.btn-3:hover span {
+    -webkit-transform: translateY(300%);
+    transform: translateY(300%);
+}
+
+[type="file"] + label.btn-3:hover {
+    background-color: #ae144f;
+}
+
+[type="file"] + label.btn-3:hover::before {
+    top: 0;
+}
+
+[type="file"] + label.btn-3::before {
+    color: #fff;
+    content: "\f382";
+    font-family: "Font Awesome 5 Pro";
+    font-size: 130%;
+    height: 100%;
+    left: 0;
+    line-height: 2.6;
+    position: absolute;
+    top: -180%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
+    text-align: center;
+}
