@@ -2,7 +2,7 @@
 
 CSV Reducer is a python script to filter columns from a CSV file with option to remove duplicate rows, saving results in other file.
 
-> **Note:** This is used until CSV file has about 40GB. ;)
+> **Note:** Use this until CSV file has about 40GB. ;)
 
 ## Table of contents
 * [Installation](#installation)
@@ -40,9 +40,9 @@ From root project folder run:
 csv-reducer.py -i my_input_file.csv -o my_output_file.csv
 ```
 
-> **Note:** CSV columns separator default is a comma caracter ','.
+> **Note:** `CSV columns separator default is a comma caracter ','.`
 
-> **Note:** First line **must be** a header with columns names. Reducer will ask you which columns you want to keep, select it in order.
+> **Note:** `First line **must be** a header with columns names. Reducer will ask you which columns you want to keep, select it in order using space and enter when done.`
 
 ### To remove duplicated rows
 
@@ -50,7 +50,7 @@ csv-reducer.py -i my_input_file.csv -o my_output_file.csv
 csv-reducer.py -i my_input_file.csv -o my_output_file.csv -d True
 ```
 
-> **Note:** Reducer will ask you which columns you want to check for duplicated rows.
+> **Note:** `Reducer will ask you which columns you want to check for duplicated rows.`
 
 ### To change CSV separator
 
